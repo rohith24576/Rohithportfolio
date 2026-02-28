@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCodeBlockAnimation();
     initParticles();
     initResumeDownload();
+    initGitHubProjects();
 });
 
 function initResumeDownload() {
@@ -145,4 +146,68 @@ function initSkillCards() {
             this.style.setProperty('--mouse-y', `${y}px`);
         });
     });
+}
+
+const GITHUB_USER = 'rohith24576';
+const GITHUB_API = `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=30`;
+
+function formatRepoName(name) {
+    return name
+        .replace(/-/g, ' ')
+        .replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function initGitHubProjects() {
+    const grid = document.getElementById('projects-grid');
+    const loading = document.getElementById('projects-loading');
+    if (!grid || !loading) return;
+
+    fetch(GITHUB_API)
+        .then(res => {
+            if (!res.ok) throw new Error('Failed to fetch repositories');
+            return res.json();
+        })
+        .then(repos => {
+            const ownedRepos = repos.filter(r => !r.fork);
+            loading.remove();
+
+            if (ownedRepos.length === 0) {
+                grid.innerHTML = '<div class="projects-error reveal">No public repositories found.</div>';
+                return;
+            }
+
+            ownedRepos.forEach((repo, i) => {
+                const card = document.createElement('a');
+                card.href = repo.html_url;
+                card.target = '_blank';
+                card.rel = 'noopener noreferrer';
+                card.className = `project-card reveal ${i > 0 ? `reveal-delay-${Math.min(i, 3)}` : ''}`;
+
+                const tag = repo.language || 'Project';
+                const techTags = repo.topics?.length
+                    ? repo.topics.slice(0, 5)
+                    : (repo.language ? [repo.language] : ['Code']);
+
+                card.innerHTML = `
+                    <div class="project-card-glow"></div>
+                    <div class="project-header">
+                        <span class="project-number">${String(i + 1).padStart(2, '0')}</span>
+                        <span class="project-tag">${tag}</span>
+                    </div>
+                    <h3>${formatRepoName(repo.name)}</h3>
+                    <p>${repo.description || 'No description provided.'}</p>
+                    <div class="project-tech">
+                        ${techTags.map(t => `<span>${t}</span>`).join('')}
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            initScrollReveal();
+        })
+        .catch(() => {
+            loading.textContent = 'Unable to load projects. Check back later.';
+            loading.classList.remove('projects-loading');
+            loading.classList.add('projects-error');
+        });
 }

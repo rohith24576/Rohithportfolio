@@ -1142,6 +1142,28 @@ section {
     color: var(--text-secondary);
 }
 
+.projects-loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.projects-error {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+a.project-card {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
 /* ===== Contact Section ===== */
 .contact-content {
     max-width: 600px;
