@@ -151,10 +151,34 @@ function initSkillCards() {
 const GITHUB_USER = 'rohith24576';
 const GITHUB_API = `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=30`;
 
+const REPO_DESCRIPTIONS = {
+    'connect4': 'A classic two-player Connect4 board game built in Java. Implements turn-based gameplay, win detection across horizontal, vertical, and diagonal lines, and draw conditions. Demonstrates object-oriented programming and algorithmic thinking for game state validation.',
+    'rohithportfolio': 'Personal portfolio website showcasing my projects, skills, and experience. Built with HTML, CSS, and JavaScript as a dynamic, responsive single-page application with smooth animations and modern design.',
+    'canteen-management-system': 'Web-based user interface for managing canteen operations. Features dynamic menu display with categories, food item cards with pricing, shopping cart functionality, and order placement. Responsive design for desktop and mobile devices.',
+    'canteen-management-system-with-database': 'Database design and implementation for the canteen management system using MySQL. Includes normalized tables for users, menu items, orders, and inventory with proper relationships, foreign keys, and constraints for data integrity.'
+};
+
 function formatRepoName(name) {
     return name
         .replace(/-/g, ' ')
         .replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+function getProjectDescription(repo) {
+    const key = repo.name.toLowerCase();
+    if (REPO_DESCRIPTIONS[key]) return REPO_DESCRIPTIONS[key];
+    if (repo.description) {
+        const d = repo.description.trim();
+        if (d.length >= 40 && d.length <= 200) return d;
+        if (d.length > 200) return d.slice(0, 197) + '...';
+    }
+    return 'A project demonstrating practical application of programming concepts and software development skills.';
 }
 
 function initGitHubProjects() {
@@ -192,12 +216,12 @@ function initGitHubProjects() {
                     <div class="project-card-glow"></div>
                     <div class="project-header">
                         <span class="project-number">${String(i + 1).padStart(2, '0')}</span>
-                        <span class="project-tag">${tag}</span>
+                        <span class="project-tag">${escapeHtml(tag)}</span>
                     </div>
-                    <h3>${formatRepoName(repo.name)}</h3>
-                    <p>${repo.description || 'No description provided.'}</p>
+                    <h3>${escapeHtml(formatRepoName(repo.name))}</h3>
+                    <p>${escapeHtml(getProjectDescription(repo))}</p>
                     <div class="project-tech">
-                        ${techTags.map(t => `<span>${t}</span>`).join('')}
+                        ${techTags.map(t => `<span>${escapeHtml(t)}</span>`).join('')}
                     </div>
                 `;
                 grid.appendChild(card);
