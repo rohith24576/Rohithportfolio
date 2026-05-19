@@ -44,16 +44,16 @@
 
     <header>
         <nav class="navbar">
-            <a href="#hero" class="nav-logo">Rohith</a>
+            <a href="index.html" class="nav-logo">Rohith</a>
             <div class="nav-slideout">
                 <ul class="nav-links">
-                    <li><a href="#hero">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html#about">About</a></li>
                     <li><a href="about.html#skills">Skills</a></li>
                     <li><a href="about.html#timeline">Timeline</a></li>
                     <li><a href="projects.html#certifications">Certifications</a></li>
                     <li><a href="projects.html#projects">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="nav-social">
                     <a href="mailto:rohithjayanthi06@gmail.com" aria-label="Email" class="nav-social-link">
@@ -91,32 +91,52 @@
     </header>
 
     <main>
-        <section id="hero" class="hero">
-            <div class="hero-content">
-                <p class="hero-greeting">Hi, I'm</p>
-                <h1 class="hero-name">Rohith</h1>
-                <p class="hero-tagline">Computer Science Student | AI & ML Enthusiast</p>
-                <p class="hero-subtitle">Aspiring software engineer passionate about building intelligent systems that
-                    solve real-world problems.</p>
-                <div class="hero-cta">
-                    <a href="Rohith_resume.pdf" download="Rohith_resume.pdf"
-                        class="btn btn-primary resume-download">View Resume</a>
-                    <a href="projects.html#projects" class="btn btn-secondary">View Projects</a>
-                    <a href="contact.html" class="btn btn-secondary">Contact Me</a>
-                </div>
+        <section id="contact" class="contact">
+            <div class="section-header reveal">
+                <span class="section-number">06</span>
+                <h2>Contact</h2>
             </div>
-            <div class="hero-visual">
-                <div class="code-block">
-                    <span class="code-line"><span class="code-keyword">const</span> rohith = {</span>
-                    <span class="code-line"> passion: <span class="code-string">"AI & ML"</span>,</span>
-                    <span class="code-line"> focus: <span class="code-string">"Software Engineering"</span>,</span>
-                    <span class="code-line"> status: <span class="code-string">"Building"</span></span>
-                    <span class="code-line">};</span>
-                    <span class="code-cursor"></span>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <p class="contact-intro reveal">Let's connect and build something amazing together.</p>
+                    <div class="contact-links">
+                        <a href="mailto:rohithjayanthi06@gmail.com" class="contact-link reveal">
+                            <span class="contact-link-icon">Email</span>
+                            <span class="contact-link-text">rohithjayanthi06@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/rohith24576" target="_blank" rel="noopener noreferrer"
+                            class="contact-link reveal reveal-delay-1">
+                            <span class="contact-link-icon">GitHub</span>
+                            <span class="contact-link-text">github.com/rohith24576</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rohith-jayanthi-b24402347/" target="_blank"
+                            rel="noopener noreferrer" class="contact-link reveal reveal-delay-2">
+                            <span class="contact-link-icon">LinkedIn</span>
+                            <span class="contact-link-text">linkedin.com/in/rohith-jayanthi-b24402347</span>
+                        </a>
+                    </div>
+                    <p class="contact-location">Coimbatore, India</p>
                 </div>
+
+                <form class="contact-form reveal reveal-delay-1" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Name" aria-label="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Your Email"
+                            aria-label="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Your Message"
+                            aria-label="Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+                </form>
             </div>
         </section>
-        <!-- Sections split to about.html, projects.html, and contact.html -->
     </main>
 
     <footer class="footer">

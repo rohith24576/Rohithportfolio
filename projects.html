@@ -44,15 +44,15 @@
 
     <header>
         <nav class="navbar">
-            <a href="#hero" class="nav-logo">Rohith</a>
+            <a href="index.html" class="nav-logo">Rohith</a>
             <div class="nav-slideout">
                 <ul class="nav-links">
-                    <li><a href="#hero">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html#about">About</a></li>
                     <li><a href="about.html#skills">Skills</a></li>
                     <li><a href="about.html#timeline">Timeline</a></li>
-                    <li><a href="projects.html#certifications">Certifications</a></li>
-                    <li><a href="projects.html#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="nav-social">
@@ -91,32 +91,47 @@
     </header>
 
     <main>
-        <section id="hero" class="hero">
-            <div class="hero-content">
-                <p class="hero-greeting">Hi, I'm</p>
-                <h1 class="hero-name">Rohith</h1>
-                <p class="hero-tagline">Computer Science Student | AI & ML Enthusiast</p>
-                <p class="hero-subtitle">Aspiring software engineer passionate about building intelligent systems that
-                    solve real-world problems.</p>
-                <div class="hero-cta">
-                    <a href="Rohith_resume.pdf" download="Rohith_resume.pdf"
-                        class="btn btn-primary resume-download">View Resume</a>
-                    <a href="projects.html#projects" class="btn btn-secondary">View Projects</a>
-                    <a href="contact.html" class="btn btn-secondary">Contact Me</a>
-                </div>
+        <section id="certifications" class="certifications">
+            <div class="section-header reveal">
+                <span class="section-number">04</span>
+                <h2>Certifications</h2>
             </div>
-            <div class="hero-visual">
-                <div class="code-block">
-                    <span class="code-line"><span class="code-keyword">const</span> rohith = {</span>
-                    <span class="code-line"> passion: <span class="code-string">"AI & ML"</span>,</span>
-                    <span class="code-line"> focus: <span class="code-string">"Software Engineering"</span>,</span>
-                    <span class="code-line"> status: <span class="code-string">"Building"</span></span>
-                    <span class="code-line">};</span>
-                    <span class="code-cursor"></span>
-                </div>
+            <div class="certifications-grid">
+                <article class="cert-card reveal">
+                    <div class="cert-image-wrap">
+                        <img src="assets/python-cert.png"
+                            alt="Python Complete Course For Python Beginners - Udemy Certificate">
+                    </div>
+                    <div class="cert-info">
+                        <span class="cert-platform">Udemy</span>
+                        <h3>Python Complete Course For Python Beginners</h3>
+                        <p class="cert-instructor">Horizon Tech</p>
+                        <p class="cert-meta">7.5 hours | Feb 2026</p>
+                    </div>
+                </article>
+                <article class="cert-card reveal reveal-delay-1">
+                    <div class="cert-image-wrap">
+                        <img src="assets/java-cert.png" alt="The Complete Java Course - Udemy Certificate">
+                    </div>
+                    <div class="cert-info">
+                        <span class="cert-platform">Udemy</span>
+                        <h3>The Complete Java Course: From Basics to Advanced</h3>
+                        <p class="cert-instructor">Ahmed Elsakka</p>
+                        <p class="cert-meta">25 hours | Feb 2026</p>
+                    </div>
+                </article>
             </div>
         </section>
-        <!-- Sections split to about.html, projects.html, and contact.html -->
+
+        <section id="projects" class="projects">
+            <div class="section-header reveal">
+                <span class="section-number">05</span>
+                <h2>Projects</h2>
+            </div>
+            <div class="projects-grid" id="projects-grid">
+                <div class="projects-loading reveal" id="projects-loading">Loading projects from GitHub...</div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
