@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Rohith, a Software Engineer passionate about AI and Robotics.">
     <title>Rohith | Software Engineer | AI & Robotics</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +38,7 @@
     <div class="vignette"></div>
     <div class="scanlines"></div>
 
+    <header>
     <nav class="navbar">
         <a href="#hero" class="nav-logo">Rohith</a>
         <div class="nav-slideout">
@@ -67,6 +69,7 @@
             <span></span>
         </button>
     </nav>
+    </header>
 
     <main>
         <section id="hero" class="hero">
@@ -244,23 +247,41 @@
                 <span class="section-number">06</span>
                 <h2>Contact</h2>
             </div>
-            <div class="contact-content">
-                <p class="contact-intro reveal">Let's connect and build something amazing together.</p>
-                <div class="contact-links">
-                    <a href="mailto:rohithjayanthi06@gmail.com" class="contact-link reveal">
-                        <span class="contact-link-icon">Email</span>
-                        <span class="contact-link-text">rohithjayanthi06@gmail.com</span>
-                    </a>
-                    <a href="https://github.com/rohith24576" target="_blank" rel="noopener noreferrer" class="contact-link reveal reveal-delay-1">
-                        <span class="contact-link-icon">GitHub</span>
-                        <span class="contact-link-text">github.com/rohith24576</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/rohith-jayanthi-b24402347/" target="_blank" rel="noopener noreferrer" class="contact-link reveal reveal-delay-2">
-                        <span class="contact-link-icon">LinkedIn</span>
-                        <span class="contact-link-text">linkedin.com/in/rohith-jayanthi-b24402347</span>
-                    </a>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <p class="contact-intro reveal">Let's connect and build something amazing together.</p>
+                    <div class="contact-links">
+                        <a href="mailto:rohithjayanthi06@gmail.com" class="contact-link reveal">
+                            <span class="contact-link-icon">Email</span>
+                            <span class="contact-link-text">rohithjayanthi06@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/rohith24576" target="_blank" rel="noopener noreferrer" class="contact-link reveal reveal-delay-1">
+                            <span class="contact-link-icon">GitHub</span>
+                            <span class="contact-link-text">github.com/rohith24576</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rohith-jayanthi-b24402347/" target="_blank" rel="noopener noreferrer" class="contact-link reveal reveal-delay-2">
+                            <span class="contact-link-icon">LinkedIn</span>
+                            <span class="contact-link-text">linkedin.com/in/rohith-jayanthi-b24402347</span>
+                        </a>
+                    </div>
+                    <p class="contact-location">Coimbatore, India</p>
                 </div>
-                <p class="contact-location">Coimbatore, India</p>
+                
+                <form class="contact-form reveal reveal-delay-1" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Name" aria-label="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Your Email" aria-label="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Your Message" aria-label="Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+                </form>
             </div>
         </section>
     </main>
