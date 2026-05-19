@@ -1435,3 +1435,36 @@ a.project-card {
         padding: 1.5rem;
     }
 }
+
+/* Accessibility Utilities */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--accent);
+    color: var(--bg-primary);
+    padding: 8px 16px;
+    z-index: 200;
+    font-weight: bold;
+    text-decoration: none;
+    transition: top 0.2s;
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: none;
+    box-shadow: 0 0 15px var(--accent-glow);
+}
